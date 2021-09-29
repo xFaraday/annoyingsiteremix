@@ -23,7 +23,7 @@ const downloads = [
 ]
 
 const searchestomake = [
-	'rick and morty rule34',
+	'rick and morty is the best show ever made',
 	'im going to drop out of school, what to do?',
 	'i love my coworker but they are married',
 	'the ciso president is so cool',
@@ -559,10 +559,10 @@ function interceptUserInput(onInput) {
 
 function setupSearchWindow (win) {
   if (!win) return
-  win.window.location = 'https://www.bing.com/search?q=' + encodeURIComponent(SEARCHES[0])
+  win.window.location = 'https://www.bing.com/search?q=' + encodeURIComponent(searchestomake[0])
   let searchIndex = 1
   const interval = setInterval(() => {
-    if (searchIndex >= SEARCHES.length) {
+    if (searchIndex >= searchestomake.length) {
       clearInterval(interval)
       win.window.location = window.location.pathname
       return
@@ -578,7 +578,7 @@ function setupSearchWindow (win) {
     setTimeout(() => {
       const { x, y } = getRandomCoords()
       win.moveTo(x, y)
-      win.window.location = 'https://www.bing.com/search?q=' + encodeURIComponent(SEARCHES[searchIndex])
+      win.window.location = 'https://www.bing.com/search?q=' + encodeURIComponent(searchestomake[searchIndex])
       searchIndex += 1
     }, 500)
   }, 2500)
